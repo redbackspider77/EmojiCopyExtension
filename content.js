@@ -1,18 +1,23 @@
 async function getEmojiFromEmojipedia(url) {
-  const proxy = "https://corsproxy.io/?";
-  const response = await fetch(proxy + encodeURIComponent(url));
-  const html = await response.text();
+    return new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({ type: "fetchEmojipedia", url }, (response) => {
+            if (response.error) {
+                reject(response.error);
+                return;
+            }
 
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(response.html, 'text/html');
 
-  const emojiElement = doc.querySelector('.Emoji_emoji-large__GG4kj');
+            const emojiElement = doc.querySelector('.Emoji_emoji-large__GG4kj');
 
-  if (emojiElement) {
-    return emojiElement.innerText;
-  } else {
-    throw new Error('Emoji not found on the page.');
-  }
+            if (emojiElement) {
+                resolve(emojiElement.innerText.trim());
+            } else {
+                reject('Emoji not found on page.');
+            }
+        });
+    });
 }
 
 function createBox(emoji, searchResult) {

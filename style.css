@@ -6,6 +6,21 @@ body {
     text-align: center;
 }
 
+@media (prefers-color-scheme: light) {  
+  body {  
+     background: #f8f9fa;    
+     color: black;  
+  }
+}
+
+@media (prefers-color-scheme: dark) {  
+  body {  
+     background: #303134;    
+     color: white;  
+  }
+}
+
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
