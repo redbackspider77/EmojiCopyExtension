@@ -5,10 +5,10 @@ This Chrome Extension injects a box under the Emojipedia.org search result on an
 <table>
   <tr>
     <th>
-      <img src=/assets/Light.png/>
+      <img src=/assets/Full%20Light.png/>
     </th>
     <th>
-      <img src=/assets/Dark.png/>
+      <img src=/assets/Full%20Dark.png/>
     </th>
   </tr>
 </table>
