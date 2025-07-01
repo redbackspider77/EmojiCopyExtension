@@ -87,7 +87,7 @@ function createBox(emoji, searchResult) {
 
 chrome.storage.local.get(['enabled'], (data) => {
     if (data.enabled !== false) {
-        window.addEventListener('load', function() {
+        window.addEventListener('DOMContentLoaded', function() {
         //  const prompt = document.getElementById('APjFqb').value.toLowerCase();
         //  if (prompt.includes('emoji')) {
                 const resultLinks = document.getElementsByClassName('zReHs');

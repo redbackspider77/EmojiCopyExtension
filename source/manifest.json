@@ -1,7 +1,7 @@
 {
     "name": "Emoji Copy Extension",
     "description": "Copy any emoji from Emojipedia.org without having to leave the Google search results page!",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "manifest_version": 3,
     "action": {
         "default_popup": "extension.html",
@@ -10,7 +10,8 @@
     "content_scripts": [
         {
         "matches": ["https://www.google.com/search*"],
-        "js": ["content.js"]
+        "js": ["content.js"],
+        "run_at": "document_start"
         }
     ],
     "permissions": [
