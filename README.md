@@ -12,7 +12,3 @@ This Chrome Extension injects a box under the Emojipedia.org search result on an
     </th>
   </tr>
 </table>
-
-# Usage
-
-1. 
