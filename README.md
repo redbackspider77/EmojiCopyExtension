@@ -4,10 +4,10 @@ This Chrome Extension injects a box under the Emojipedia.org search result on an
 
 <table>
   <tr>
-    <th>
+    <th width=1000px>
       <img src="./assets/Light.png">
     </th>
-    <th>
+    <th width=1000px>
       <img src="./assets/Dark.png">
     </th>
   </tr>
@@ -20,10 +20,10 @@ This Chrome Extension injects a box under the Emojipedia.org search result on an
 * You may toggle the extension by clicking on it in the extensions toolbox and sliding the switch:
 <table>
   <tr>
-    <th>
+    <th width=1000px>
       <img src="./assets/LightUI.png">
     </th>
-    <th>
+    <th width=1000px>
       <img src="./assets/DarkUI.png">
     </th>
   </tr>
