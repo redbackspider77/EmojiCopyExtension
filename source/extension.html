@@ -1,16 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
-        <script src="toggle.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Emoji Copy Extension</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Emoji Copy Extension</h1>
-        <p>Toggle below:</p>
-        <label class="switch">
-            <input id="toggle" type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        <p>Report any issues <a target="_blank" href="https://github.com/redbackspider77/EmojiCopyExtension/issues/new">on the Github.</a></p>
+        <main>
+            <header>
+                <h1>Emoji Copy Extension</h1>
+            </header>
+            
+            <section class="controls">
+                <p>Enable/disable the extension:</p>
+                <label class="switch" for="toggle">
+                    <input id="toggle" type="checkbox" aria-describedby="toggle-description">
+                    <span class="slider round" aria-hidden="true"></span>
+                </label>
+                <p id="toggle-description" class="sr-only">Toggle to enable or disable emoji copy functionality</p>
+            </section>
+            
+            <footer>
+                <p>Report issues on <a href="https://github.com/redbackspider77/EmojiCopyExtension/issues/new" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            </footer>
+        </main>
+        
+        <script src="toggle.js"></script>
     </body>
 </html>
