@@ -89,4 +89,4 @@ Other than that, making my first Chrome extension was pretty easy!
 
 ### More questions?
 
-If you think I could include some more detail, either make a pull request, [create an issue](https://github.com/redbackspider77/EmojiCopyExtension/issues/new), or [email me](mailto:redbackspider77@gmail.com)!
+If you think I could include some more detail, either make a pull request, [create a discussion](https://github.com/redbackspider77/EmojiCopyExtension/discussions/new/choose), or [email me](mailto:redbackspider77@gmail.com)!
