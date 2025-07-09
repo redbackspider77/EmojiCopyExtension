@@ -19,21 +19,61 @@ const STYLES = {
     }
 };
 
+function showUserError(searchResult, message) {
+    if (searchResult.querySelector('.emoji-error-box')) return;
+    
+    const errorBox = document.createElement('div');
+    errorBox.className = 'emoji-error-box';
+    
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = isDark ? STYLES.box.dark : STYLES.box.light;
+    
+    errorBox.style.cssText = `
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        font-size: 14px;
+        border: 1px solid #ea4335;
+        background-color: ${isDark ? '#2d1b1e' : '#fce8e6'};
+        color: #ea4335;
+        box-sizing: border-box;
+    `;
+    
+    errorBox.innerHTML = `
+        <span>⚠️</span>
+        <span>${message}</span>
+    `;
+    
+    searchResult.appendChild(errorBox);
+    
+    setTimeout(() => {
+        if (errorBox.parentNode) {
+            errorBox.parentNode.removeChild(errorBox);
+        }
+    }, 5000);
+}
+
 async function getEmojiFromEmojipedia(url) {
     return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({ type: "fetchEmojipedia", url }, (response) => {
             if (chrome.runtime.lastError) {
-                reject(chrome.runtime.lastError.message);
+                reject(`Connection error: ${chrome.runtime.lastError.message}`);
                 return;
             }
             
             if (response?.error) {
-                reject(response.error);
+                reject(`Fetch error: ${response.error}`);
                 return;
             }
 
             if (!response?.html) {
-                reject('No HTML content received');
+                reject('No content received from Emojipedia');
                 return;
             }
 
@@ -51,7 +91,7 @@ async function getEmojiFromEmojipedia(url) {
 
                 reject('Emoji not found on page');
             } catch (error) {
-                reject(`Parsing error: ${error.message}`);
+                reject(`Page parsing failed: ${error.message}`);
             }
         });
     });
@@ -87,11 +127,9 @@ function createBox(emoji, searchResult) {
 
     const emojiSpan = document.createElement('span');
     emojiSpan.textContent = emoji;
-    emojiSpan.setAttribute('aria-label', `Emoji: ${emoji}`);
 
     const copyButton = document.createElement('button');
     copyButton.textContent = 'Copy';
-    copyButton.setAttribute('aria-label', `Copy emoji ${emoji}`);
     copyButton.style.cssText = `
         background-color: #1a73e8;
         border: none;
@@ -125,7 +163,7 @@ function createBox(emoji, searchResult) {
             }, 1200);
         } catch (err) {
             console.error('Clipboard error:', err);
-            copyButton.textContent = 'Error';
+            copyButton.textContent = 'Failed';
             copyButton.style.backgroundColor = '#ea4335';
             
             setTimeout(() => {
@@ -153,7 +191,10 @@ function processSearchResults() {
         if (link.href?.startsWith("https://emojipedia.org")) {
             getEmojiFromEmojipedia(link.href)
                 .then(emoji => createBox(emoji, searchResult))
-                .catch(err => console.warn('Failed to fetch emoji:', err));
+                .catch(err => {
+                    console.warn('Failed to fetch emoji:', err);
+                    showUserError(searchResult, 'Failed to load emoji');
+                });
         }
     });
 }
