@@ -4,23 +4,85 @@ body {
     font-family: Calibri;
     white-space: nowrap;
     text-align: center;
+    background: #f8f9fa;    
+    color: black;  
 }
 
-@media (prefers-color-scheme: light) {  
-  body {  
-     background: #f8f9fa;    
-     color: black;  
-  }
+.review-block {
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+#like {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    color: inherit;
+}
+
+#review {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-family: Calibri, sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#review:hover {
+    background-color: #1976D2;
+    transform: scale(1.03);
+}
+
+.pulse {
+    animation: pulse 2.5s infinite;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 24px;
+    letter-spacing: 0.2em;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#issues {
+    margin-top: 20px;
 }
 
 @media (prefers-color-scheme: dark) {  
-  body {  
-     background: #303134;    
-     color: white;
-  }
-  a {
-    color: #4f8cff;
-  }
+    body {  
+        background: #303134;    
+        color: white;
+    }
+    
+    a {
+        color: #4f8cff;
+    }
+
+    #review {
+        background-color: #4f8cff;
+        color: white;
+    }
+
+    #review:hover {
+        background-color: #377de6;
+    }
 }
 
 /* The switch - the box around the slider */
