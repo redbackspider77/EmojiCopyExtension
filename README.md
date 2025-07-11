@@ -15,7 +15,7 @@ This Chrome Extension injects a box under the Emojipedia.org search result on an
 
 ## Usage
 
-1. [Install from the Chrome Web Store.](https://chromewebstore.google.com/detail/Emoji%20Copy%20Extension/nhkpcjdklcgchjejlnfdpgpcgmailpik)
+1. [Install from the Chrome Web Store.](https://chromewebstore.google.com/detail/emoji-copy-extension/nhkpcjdklcgchjejlnfdpgpcgmailpik?utm_source=github&utm_medium=readme_md)
 2. A copy button will now be available under any Emojipedia.org search results in Google.
 * You may toggle the extension by clicking on it in the extensions toolbox and sliding the switch:
 <table>

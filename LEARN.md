@@ -1,6 +1,6 @@
 # How I built this Chrome Extension
 
-Emoji Copy Extension simply adds a box under any [Emojipedia.org](https://emojipedia.org/) search results in Google in which the user can see and copy the respective emoji. I thought of this idea after finding it frustrating to copy an emoji when I search it up because of Google's formatting or go on another stupid website just to be able to copy without formatting easily. Don't ask why I don't just hit `Win+.` on Windows to find an emoji I want to use, I am used to searching it up. :)
+[Emoji Copy Extension](https://chromewebstore.google.com/detail/emoji-copy-extension/nhkpcjdklcgchjejlnfdpgpcgmailpik?utm_source=github&utm_medium=learn_md) simply adds a box under any [Emojipedia.org](https://emojipedia.org/) search results in Google in which the user can see and copy the respective emoji. I thought of this idea after finding it frustrating to copy an emoji when I search it up because of Google's formatting or go on another stupid website just to be able to copy without formatting easily. Don't ask why I don't just hit `Win+.` on Windows to find an emoji I want to use, I am used to searching it up. :)
 
 <table>
   <tr>
@@ -78,15 +78,17 @@ After my item had been reviewed by the Chrome Web Store team (which only took ar
 - Move onto a new project while continuing to maintain this one
 - Be proud of my work - after all, I did use a few hours of my free time making it!
 
+Here's the link if you want to check it out by the way: [https://chromewebstore.google.com/detail/emoji-copy-extension/nhkpcjdklcgchjejlnfdpgpcgmailpik](https://chromewebstore.google.com/detail/emoji-copy-extension/nhkpcjdklcgchjejlnfdpgpcgmailpik?utm_source=github&utm_medium=learn_md)
+
 ### Problems I ran into
 
-- Uploading 1200x800 screenshot instead of 1280x800 screenshots - Chrome Web Store is fussy on the exact dimensions of all of the promotional images, and one must resize/crop them themselves
+- I had many code errors which were are too minor to remember now, but can never be avoided when developing something new; make sure to use `console.log()` when debugging to see where your code gets stuck!
+- Uploading 1200x800 screenshot instead of 1280x800 screenshots; Chrome Web Store is fussy on the exact dimensions of all of the promotional images, and one must resize/crop them themselves — mentioning this one because I spent a good 10 minutes figuring out why they were being rejected
 - As soon as I published it, I recieved 4 emails from Indians offering me their services to "boost my extension's visibility" - I ignored these now that I know they will never be for free, and I don't have enough money to want to use it on this: <img src="./assets/Spam.png">
 After all, I am making this for fun, and don't have any way to make that money back yet!
-- Some code errors which were are too minor to remember, but can never be avoided when developing something new; make sure to use `console.log()` when debugging to see where your code gets stuck!
 
 Other than that, making my first Chrome extension was pretty easy!
 
 ### More questions?
 
-If you think I could include some more detail, either make a pull request, [create a discussion](https://github.com/redbackspider77/EmojiCopyExtension/discussions/new/choose), or [email me](mailto:redbackspider77@gmail.com)!
+If you think I could include some more detail, [create a discussion](https://github.com/redbackspider77/EmojiCopyExtension/discussions/new/choose) or [email me](mailto:redbackspider77@gmail.com)!
